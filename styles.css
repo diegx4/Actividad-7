@@ -1,0 +1,157 @@
+/* Estilo base para scroll suave en todos los navegadores */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(145deg, #121212, #1f1f2e);
+    color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+/* Header y navegación */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: rgba(10, 10, 10, 0.95);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    animation: slideDown 1.5s ease-out;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #00ffe7;
+    text-shadow: 2px 2px 5px #000;
+}
+
+nav ul.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+    list-style: none;
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    background: #00ffe7;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* Secciones */
+.section {
+    padding: 4rem 2rem;
+    animation: fadeInUp 1.5s ease both;
+    transition: transform 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.section:hover {
+    transform: scale(1.01) rotateX(1deg);
+}
+
+/* Tarjetas 3D */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: linear-gradient(135deg, #2e2e3f, #3e3e50);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s, box-shadow 0.4s;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.card:hover {
+    transform: rotateY(8deg) scale(1.08);
+    box-shadow: 0 16px 40px rgba(0, 255, 231, 0.4);
+}
+
+/* Listas */
+ul {
+    padding-left: 1.2rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #111;
+    color: #888;
+    border-top: 1px solid #333;
+}
+
+/* Botón scroll */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    background-color: #00ffe7;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    padding: 14px 18px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 20px rgba(0, 255, 231, 0.6);
+    transition: transform 0.3s, background 0.3s;
+    z-index: 1000;
+}
+
+#scrollTopBtn:hover {
+    transform: scale(1.15) rotate(10deg);
+    background-color: #fff;
+}
